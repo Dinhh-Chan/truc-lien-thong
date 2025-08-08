@@ -26,7 +26,6 @@ services:
   mongodb:
     image: mongo:6.0
     container_name: mongodb
-    # A simpler healthcheck that just checks if the server is responsive
     healthcheck:
       test: |
         mongosh --quiet --eval 'db.adminCommand("ping")'
@@ -46,7 +45,4 @@ services:
     volumes:
       # Mount the database data directory
       - ./docker/mongodb:/data/db
-      # Mount the keyfile into the container
-      - ./dockers/mongo-keyfile:/etc/mongo/mongo-keyfile
-    command: ["--replSet", "rs0", "--bind_ip_all", "--keyFile", "/etc/mongo/mongo-keyfile"]
     restart: always
