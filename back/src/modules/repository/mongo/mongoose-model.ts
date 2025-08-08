@@ -2,12 +2,14 @@ import { AuditLogSchema } from "@module/audit-log/entities/audit-log.entity";
 import { DataPartitionUserSchema } from "@module/data-partition/entities/data-partition-user.entity";
 import { DataPartitionSchema } from "@module/data-partition/entities/data-partition.entity";
 import { FileSchema } from "@module/file/entities/file.entity";
+import { FormNhapLieuSchema } from "@module/he-thong-nhap-lieu/entities/form-nhap-lieu.entity";
 import { ImportSessionSchema } from "@module/import-session/entities/import-session.entity";
 import { IncrementSchema } from "@module/increment/entities/increment.entity";
 import { NotificationSchema } from "@module/notification/entities/notification.entity";
 import { OneSignalUserSchema } from "@module/one-signal/entities/one-signal-user.entity";
 import { HamSinhMaSchema } from "@module/quy-tac-ma/entities/ham-sinh-ma.entity";
 import { QuyTacMaSchema } from "@module/quy-tac-ma/entities/quy-tac-ma.entity";
+import { RegisterMemberSchema } from "@module/register-member/entities/register-member-mongo.entity";
 import { SettingSchema } from "@module/setting/entities/setting.entity";
 import { TopicSchema } from "@module/topic/entities/topic.entity";
 import { UserTopicSchema } from "@module/topic/entities/user-topic.entity";
@@ -30,6 +32,8 @@ const SCHEMA_LIST: Schema[] = [
     QuyTacMaSchema,
     DataPartitionSchema,
     DataPartitionUserSchema,
+    RegisterMemberSchema,
+    FormNhapLieuSchema,
 ];
 
 const MongooseModel = MongooseModule.forFeature(

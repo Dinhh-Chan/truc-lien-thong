@@ -17,7 +17,8 @@ import { QuyTacMaModule } from "./modules/quy-tac-ma/quy-tac-ma.module";
 import { SettingModule } from "./modules/setting/setting.module";
 import { TopicModule } from "./modules/topic/topic.module";
 import { UserModule } from "./modules/user/user.module";
-
+import { RegisterMemberModule } from "@module/register-member/register-member.module";
+import { HeThongNhapLieuModule } from "@module/he-thong-nhap-lieu/he-thong-nhap-lieu.module";
 @Module({
     imports: [
         ...DefaultModules,
@@ -37,6 +38,8 @@ import { UserModule } from "./modules/user/user.module";
         DataProcessModule,
         DataPartitionModule,
         CommonProviderModule,
+        RegisterMemberModule,
+        HeThongNhapLieuModule,
     ],
     providers: [...DefaultProviders],
     controllers: [AppController],

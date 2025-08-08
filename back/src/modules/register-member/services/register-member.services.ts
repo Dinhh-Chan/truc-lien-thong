@@ -16,7 +16,7 @@ import { register } from "module";
 @Injectable()
 export class RegisterMemberService 
     extends BaseService<RegisterMember, RegisterMemberRepository>
-    {
+    { 
     constructor(
         @InjectRepository(Entity.REGISTER_MEMBER)
         private readonly registerMemberRepository: RegisterMemberRepository, 

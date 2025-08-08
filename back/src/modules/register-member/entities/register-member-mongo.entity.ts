@@ -7,49 +7,45 @@ import { IsEmail, IsOptional, IsString } from "class-validator";
 import { HydratedDocument } from "mongoose";
 import { IsEnum } from "class-validator";
 import { RegisterMemberStatus } from "@module/register-member/common/constant";
-import {Column, DataType, Model, Table} from "sequelize-typescript";
-@Table({
-    tableName: "register_member",
-    timestamps: true,
+
+@Schema({ 
+    collection: Entity.REGISTER_MEMBER,
+    timestamps: true 
 })
-export class RegisterMember extends Model<RegisterMember> implements BaseEntity {
+export class RegisterMember implements BaseEntity {
     @StrObjectId()
     _id: string;
 
-    @Column({
-        type: DataType.STRING,
-        allowNull: false,
+    @Prop({ 
+        required: true,
         comment: "Name of the member"
     })
-    unitName : string;
+    unitName: string;
 
-    @Column({
-        type: DataType.STRING,
-        allowNull: true,
+    @Prop({ 
         unique: true,
+        sparse: true,
         comment: "Code of the member"
     })
     unitCode: string;
 
-    @Column({
-        type: DataType.STRING,
-        allowNull: true,
+    @Prop({
         comment: "Email of the member" 
     })
-    email: string; 
+    email: string;
 
-    @Column({
-        type: DataType.STRING,
-        allowNull: true,
+    @Prop({
         comment: "attachment of the member"
     })
     attachment: string;
 
-    @Column({
-        type: DataType.ENUM(...Object.values(RegisterMemberStatus)),
-        allowNull: false,
-        defaultValue: RegisterMemberStatus.PENDING,
+    @Prop({ 
+        enum: RegisterMemberStatus,
+        default: RegisterMemberStatus.PENDING,
         comment: "Status of the member registration"
     })
     status: RegisterMemberStatus;
 }
+
+export const RegisterMemberSchema = SchemaFactory.createForClass(RegisterMember);
+export type RegisterDocument = RegisterMember & Document;

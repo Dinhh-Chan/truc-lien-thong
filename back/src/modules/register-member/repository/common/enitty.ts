@@ -1,0 +1,1 @@
+export const CAU_HINH_KHAI_BAO_BAO_CAO = "CauHinhKhaiBaoBaoCao";

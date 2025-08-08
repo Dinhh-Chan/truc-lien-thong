@@ -15,3 +15,5 @@ export const AUDIT_LOG = "AuditLog";
 export const REGISTER_MEMBER = "RegisterMember";
 export const DATA_PARTITION = "DataPartition";
 export const DATA_PARTITION_USER = "DataPartitionUser";
+export const CAU_HINH_KHAI_BAO_BAO_CAO = "CauHinhKhaiBaoBaoCao";
+export const FORM_NHAP_LIEU = "FormNhapLieu";
